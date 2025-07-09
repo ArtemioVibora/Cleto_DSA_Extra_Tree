@@ -12,23 +12,30 @@ struct TREE {
     TREE *left;
     TREE *right;
     TREE *center;
+
 };
+
+static int ctrLeft;
+static int ctrRight;
+static int ctrCenter;
 
 void addRootNode(TREE **pStart, int value) {
     *pStart = new TREE{int(value), nullptr, nullptr, nullptr};
-
 }
 
 void addNodeLeft(TREE *tree, int data) {
     tree->left = new TREE{data, nullptr, nullptr, nullptr};
+    ctrLeft++;
 }
 
 void addNodeRight(TREE *tree, int data) {
     tree->right = new TREE{data, nullptr, nullptr, nullptr};
+    ctrRight++;
 }
 
 void addNodeCenter(TREE *tree, int data) {
     tree->center = new TREE{data, nullptr, nullptr, nullptr};
+    ctrCenter++;
 }
 
 void printTree(TREE *tree) {
